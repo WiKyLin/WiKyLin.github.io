@@ -71,10 +71,9 @@
 <p>思路：数位dp 的模板题，记住板子就好。</p>
 <p> 表示已经处理到第 i 位，第 i + 1 位的数字是 j 的方案数</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 10</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> l, d[maxn]; ll f[maxn][maxn];</span><br><span class="line"><span class="function">ll <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">bool</span> limit, <span class="keyword">bool</span> lead, <span class="keyword">int</span> pre)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!pos) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(!limit &amp;&amp; !lead &amp;&amp; ~f[pos][pre]) <span class="keyword">return</span> f[pos][pre];</span><br><span class="line">	<span class="keyword">int</span> up = limit ? d[pos] : <span class="number">9</span>; ll ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= up; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">abs</span>(i - pre) &lt; <span class="number">2</span> &amp;&amp; !lead) <span class="keyword">continue</span>;</span><br><span class="line">		ans += dfs(pos - <span class="number">1</span>, limit &amp;&amp; i == d[pos], lead &amp;&amp; !i, i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!limit &amp;&amp; !lead) f[pos][pre] = ans;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; l = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(x)&#123;</span><br><span class="line">		d[++l] = x % <span class="number">10</span>;</span><br><span class="line">		x /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dfs(l, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"> 	<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b; <span class="built_in">memset</span>(f, <span class="number">-1</span>, <span class="keyword">sizeof</span> f);</span><br><span class="line"> 	<span class="built_in">cout</span> &lt;&lt; solve(b) - solve(a - <span class="number">1</span>);</span><br><span class="line"> 	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>$T(n) = \Theta(n)$</p>
 <script type="math/tex; mode=display">
-T(n) = \Theta(n)</script><p>$LATEX​$测试。估计会失败。</p>
-
+T(n) = \Theta(n)</script><script type="math/tex; mode=display">
+LaTex测试。估计会失败。</script>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
@@ -111,24 +110,7 @@ T(n) = \Theta(n)</script><p>$LATEX​$测试。估计会失败。</p>
 
 
     </div>
-</div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
