@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="" class="loading">
 <head>
-    <meta charset="UTF-8" />
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Utopia - Keep It Simple and Stupid</title>
@@ -13,18 +13,16 @@
     <meta name="keywords" content="WiKyLin,"> 
     <meta name="description" content="WyKyLin&#39;s Blog,数位DP==
 例题T1 洛谷 P2657 [SCOI2009]windy数
-题目描述
-
-windy定义了一种windy数。不含前导零且相邻两个数字之差至少为2的正整数被称为windy数。 windy,"> 
+题目描述windy定义了一种windy数。不含前导零且相邻两个数字之差至少为2的正整数被称为windy数。 windy想知,"> 
     <meta name="author" content="WyKyLin"> 
     <link rel="alternative" href="atom.xml" title="Utopia" type="application/atom+xml"> 
     <link rel="icon" href="/img/"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <link rel="stylesheet" href="/css/diaspora.css">
+    <link rel="stylesheet" href="/css/diaspora.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body class="loading">
-    <div id="loader"></div>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loader"></div>
     <div id="single">
     <div id="top" style="display: block;">
     <div class="bar" style="width: 0;"></div>
@@ -58,50 +56,22 @@ windy定义了一种windy数。不含前导零且相邻两个数字之差至少�
         <div class="content markdown">
             <h1 id="数位DP"><a href="#数位DP" class="headerlink" title="数位DP"></a>数位DP</h1><p>==</p>
 <h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="T1-洛谷-P2657-SCOI2009-windy数"><a href="#T1-洛谷-P2657-SCOI2009-windy数" class="headerlink" title="T1 洛谷 P2657 [SCOI2009]windy数"></a>T1 洛谷 P2657 [SCOI2009]windy数</h3><blockquote>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3></blockquote>
-<blockquote>
-<p>windy定义了一种windy数。不含前导零且相邻两个数字之差至少为2的正整数被称为windy数。 windy想知道，</p>
-</blockquote>
-<blockquote>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>windy定义了一种windy数。不含前导零且相邻两个数字之差至少为2的正整数被称为windy数。 windy想知道，</p>
 <p>在A和B之间，包括A和B，总共有多少个windy数？</p>
-</blockquote>
-<blockquote>
-<h3 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h3></blockquote>
-<blockquote>
-<p>输入格式：</p>
-</blockquote>
-<blockquote>
+<h3 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h3><p>输入格式：</p>
 <p>包含两个整数，A B。</p>
-</blockquote>
-<blockquote>
 <p>输出格式：</p>
-</blockquote>
-<blockquote>
 <p>一个整数</p>
-</blockquote>
-<blockquote>
-<h3 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h3></blockquote>
-<blockquote>
-<p>输入样例#1：1 10</p>
-</blockquote>
-<blockquote>
+<h3 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><p>输入样例#1：1 10</p>
 <p>输出样例#1：9</p>
-</blockquote>
-<blockquote>
 <p>输入样例#2：25 50</p>
-</blockquote>
-<blockquote>
 <p>输出样例#2：20</p>
-</blockquote>
-<blockquote>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3></blockquote>
-<blockquote>
-<p>100%的数据，满足 1 &lt;= A &lt;= B &lt;= 2000000000 。</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>100%的数据，满足 1 &lt;= A &lt;= B &lt;= 2000000000 。</p>
 </blockquote>
 <p>思路：数位dp 的模板题，记住板子就好。</p>
 <p> 表示已经处理到第 i 位，第 i + 1 位的数字是 j 的方案数</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 10</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> l, d[maxn]; ll f[maxn][maxn];</span><br><span class="line"><span class="function">ll <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">bool</span> limit, <span class="keyword">bool</span> lead, <span class="keyword">int</span> pre)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!pos) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(!limit &amp;&amp; !lead &amp;&amp; ~f[pos][pre]) <span class="keyword">return</span> f[pos][pre];</span><br><span class="line">	<span class="keyword">int</span> up = limit ? d[pos] : <span class="number">9</span>; ll ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= up; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">abs</span>(i - pre) &lt; <span class="number">2</span> &amp;&amp; !lead) <span class="keyword">continue</span>;</span><br><span class="line">		ans += dfs(pos - <span class="number">1</span>, limit &amp;&amp; i == d[pos], lead &amp;&amp; !i, i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!limit &amp;&amp; !lead) f[pos][pre] = ans;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; l = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(x)&#123;</span><br><span class="line">		d[++l] = x % <span class="number">10</span>;</span><br><span class="line">		x /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dfs(l, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"> 	<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b; <span class="built_in">memset</span>(f, <span class="number">-1</span>, <span class="keyword">sizeof</span> f);</span><br><span class="line"> 	<span class="built_in">cout</span> &lt;&lt; solve(b) - solve(a - <span class="number">1</span>);</span><br><span class="line"> 	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>$\sum\limits_{i=1}^{n}\sum\limits_{j=1}^{m}lcm(i,j)=\sum\limits_{s=1}^{n}sV(\lfloor\frac{n}{s}\rfloor)V(\lfloor\frac{m}{s}\rfloor)\sum\limits_{d|s}d \mu(d)$</p>
+<p>$\sum\limits<em>{i=1}^{n}\sum\limits</em>{j=1}^{m}lcm(i,j)=\sum\limits<em>{s=1}^{n}sV(\lfloor\frac{n}{s}\rfloor)V(\lfloor\frac{m}{s}\rfloor)\sum\limits</em>{d|s}d \mu(d)$</p>
 <p>$LATEX$测试。估计会失败。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
@@ -140,7 +110,24 @@ windy定义了一种windy数。不含前导零且相邻两个数字之差至少�
 
 
     </div>
-</div>
+</div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
